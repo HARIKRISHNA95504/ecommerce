@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
                     type="email" 
                     name="email" 
                     required 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
                 >
             </div>
             <div class="mb-6">
@@ -49,13 +49,13 @@ if (isset($_POST['login'])) {
                     type="password" 
                     name="password" 
                     required 
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-900"
                 >
             </div>
             <button 
                 type="submit" 
                 name="login" 
-                class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-md text-lg font-medium transition duration-200"
+                class="w-full bg-[#012b47]  text-white py-3 rounded-md text-lg font-medium transition duration-200"
             >
                 Login
             </button>
