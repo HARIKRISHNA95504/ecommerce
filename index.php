@@ -39,22 +39,22 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <h2 class="text-xl font-semibold mb-6 text-center sm:text-left">Products</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 product-list">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 font-sans font-medium text-lg border p-2 lg:grid-cols-4 gap-6 product-list">
       <!-- PHP to display products will go here -->
        <?php if (empty($products)) : ?>
     <p>No products available.</p>
     <?php else : ?>
         <?php foreach ($products as $product) : ?>
-            <div class="product">
+            <div class="product p-2">
                 <h3><?= htmlspecialchars($product['name']); ?></h3>
                 <p>Price: $<?= number_format($product['price'], 2); ?></p>
                 <p><?= htmlspecialchars($product['description']); ?></p>
                 <?php if (!empty($product['image'])) : ?>
-                    <img src="images/<?= htmlspecialchars($product['image']); ?>" alt="<?= htmlspecialchars($product['name']); ?>" class="product-image">
+                    <img class="w-full my-3" src="images/<?= htmlspecialchars($product['image']); ?>" alt="<?= htmlspecialchars($product['name']); ?>" class="product-image">
                 <?php endif; ?>
-                <form method="POST" action="pages/cart.php">
+                <form method="POST" action="pages/cart.php" class="text-center">
                     <input type="hidden" name="product_id" value="<?= $product['id']; ?>">
-                    <button type="submit" name="add_to_cart" class="add-to-cart-button">Add to Cart</button>
+                    <button type="submit" name="add_to_cart" class="add-to-cart-button border rounded border-none hover:text-white px-5 py-2 hover:bg-blue-500 ">Add to Cart</button>
                 </form>
             </div>
         <?php endforeach; ?>
@@ -95,7 +95,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div>
       <h2 class="text-xl font-bold mb-4">Gallery</h2>
       <div class="grid grid-cols-3 gap-2">
-        <img src="images/r1.jpg.webp" alt="Gallery 1" class="w-full h-20 object-cover rounded" />
+        <img src="images/r1.jpg.jpg" alt="Gallery 1" class="w-full h-20 object-cover rounded" />
         <img src="images/gallery2.jpg" alt="Gallery 2" class="w-full h-20 object-cover rounded" />
         <img src="images/gallery3.jpg" alt="Gallery 3" class="w-full h-20 object-cover rounded" />
         <img src="images/gallery4.jpg" alt="Gallery 4" class="w-full h-20 object-cover rounded" />
